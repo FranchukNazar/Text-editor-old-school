@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(Lenovo-wallpaper-6_DcyKDyp.jpg);
+    background-size: cover;
+}
+
+input {
+    width: 40px;
+    height: 18px;
+    border-radius: 5px;
+    outline: none;
+}
+
+select {
+    width: 70px;
+    height: 25px;
+    border-radius: 20px;
+    outline: none;
+    background-color: aquamarine;
+}
+
+#checkboxCursive,
+#checkboxBold,
+.radio {
+    width: 11px;
+    height: 11px;
+}
+
+#boxColor {
+    display: none;
+}
+
+#container1,
+#container2 {
+    display: block;
+    width: 500px;
+    height: 280px;
+    border: 3px white solid;
+    border-radius: 20px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#formStyleMutate {
+    display: flex;
+    width: 500px;
+    height: 40px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+#container1 {
+    background-color: #78860282;
+    overflow-y: auto;
+    color: white;
+}
+
+#container2 {
+    background-color: #0e00e259;
+}
+
+#buttonCreateTable,
+#buttonCreateList,
+#buttonTextBGC,
+#buttonTextColor,
+#buttonAdd,
+#buttonSave,
+#buttonMutate,
+#buttonStyle {
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: -1px 5px 27px 2px rgba(98, 142, 204, 1);
+}
+
+#buttonAdd,
+#buttonSave {
+    width: 60px;
+    height: 20px;
+}
+
+#buttonCreateTable,
+#buttonCreateList,
+#buttonTextBGC,
+#buttonTextColor {
+    width: 120px;
+    height: 25px;
+}
+
+#buttonCreateTable,
+#buttonCreateList {
+    margin-left: 10px;
+}
+
+#formArea {
+    display: none;
+    margin: 10px 30px;
+}
+
+#formStyle {
+    display: none;
+    width: 97%;
+    height: 265px;
+    margin: 10px;
+}
+
+#formStyle span {
+    display: inline-block;
+    color: white;
+}
+
+#formStyle span1 {
+    display: inline-block;
+    color: white;
+}
+
+#boxColor,
+#boxBgColor{
+    position: absolute;
+    top: 50px;
+    left: 265px;
+    height: 210px;
+    width: 209.9px;
+    display: none;
+    flex-flow: row wrap;
+}
+
+.box,
+.box1{
+    height: 69.6px;
+    width: 69.3px;
+    border: 1px solid black;
+}
+
+#container3 {
+    display: none;
+    width: 700px;
+    height: 650px;
+    border: 3px white solid;
+    border-radius: 20px;
+    margin: 20px auto;
+    position: relative;
+    background-color: #0e00e259;
+    color: white;
+}
+#screen{
+    height: 90%;
+    width: 90%;
+    margin: 2px auto;
+    color: white;
+}
+
+#container3 h1,
+p,
+span {
+    margin: 15px;
+}
+
+#container3 > input {
+    margin: 10px;
+}
+
+#formTable {
+    display: block;
+}
+
+#formList {
+    display: none;
+}

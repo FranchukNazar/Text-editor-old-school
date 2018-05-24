@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>KR-Franchuk</title>
+    <link rel="stylesheet" href="style.css"> </head>
+
+<body>
+    <div id="container1">
+        <div id="screen">
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+        </div>
+    </div>
+    <form action="" id="formStyleMutate" name="formStyleMutate">
+        <input type="button" id="buttonMutate" value="Mutate">
+        <input type="button" id="buttonStyle" value="Style"> </form>
+    <div id="container2">
+        <form action="" id="formArea" name="formArea">
+            <textarea name="textArea" id="textArea" cols="58" rows="13"></textarea>
+            <input type="button" id="buttonSave" value="Save">
+            <input type="button" id="buttonAdd" value="Add"> </form>
+        <form action="" id="formStyle" name="formStyle">
+            <span1>Font Size</span1>
+            <input type="radio" class="radio" name="radioFS" value="12px"><span>12pt</span>
+            <input type="radio" class="radio" name="radioFS" value="16px" checked><span>16pt</span>
+            <input type="radio" class="radio" name="radioFS" value="18px"><span>18pt</span>
+            <input type="radio" class="radio" name="radioFS" value="22px"><span>22pt</span>
+            <br>
+            <br>
+            <span1>Font Family: </span1>
+            <select name="fontFamily" id="fontFamily">
+                <option value="cursive">cursive</option>
+                <option value="fantasy">fantasy</option>
+                <option value="monospase">monospase</option>
+                <option value="sens-serif">sens-serif</option>
+            </select>
+            <br>
+            <br>
+            <input type="button" id="buttonTextColor" value="Color of Text">
+            <input type="button" id="buttonTextBGC" value="Background color">
+            <br>
+            <br>
+            <input type="checkbox" id="checkboxCursive" name="checkboxCursive">
+            <span1>Cursive text</span1>
+            <br>
+            <br>
+            <input type="checkbox" id="checkboxBold" name="checkboxBold">
+            <span1>Bold text</span1>
+            <div id="boxColor">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div id="boxBgColor">
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+            </div>
+        </form>
+    </div>
+    <div id="container3">
+        <h1>Choose what you want</h1>
+        <input type="radio" id="radioTable" name="radioTL" checked><span>Table</span>
+        <input type="radio" id="radioList" name="radioTL"><span>List</span>
+        <br>
+        <br>
+        <form action="" id="formTable" name="formTable"> <span>Number of lines</span>
+            <input type="text" name="textNumberLines">
+            <br>
+            <br> <span>Number of columns</span>
+            <input type="text" name="textNumberColumns">
+            <br>
+            <br>
+            <h1>Add style to your table</h1>
+            <br>
+            <br> <span>Width of column</span>
+            <input type="text" name="textWidthColumns">
+            <br>
+            <br> <span>Height of line</span>
+            <input type="text" name="textHightLines">
+            <br>
+            <br> <span>Width of border</span>
+            <input type="text" name="textWidthBorder"> <span>Type of border</span>
+            <select name="borderType" id="borderType">
+                <option value="solid">solid</option>
+                <option value="dotted">dotted</option>
+                <option value="double">double</option>
+                <option value="dashed">dashed</option>
+            </select> <span>Color</span>
+            <select name="borderColor" id="borderColor">
+                <option value="black">black</option>
+                <option value="red">red</option>
+                <option value="blue">blue</option>
+            </select>
+            <br>
+            <br>
+            <input type="button" id="buttonCreateTable" value="Create Table"> </form>
+        <form action="" id="formList" name="formList"> <span>Number of line</span>
+            <input type="text" name="textNumberList">
+            <br>
+            <br> <span>Type of marks</span>
+            <select name="markType" id="markType">
+                <option value="circle">circle</option>
+                <option value="disc">disc</option>
+                <option value="square">square</option>
+            </select>
+            <br>
+            <br>
+            <input type="button" id="buttonCreateList" value="Create List"> </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
