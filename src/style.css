@@ -3,13 +3,264 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-body {
-    background: url(Lenovo-wallpaper-6_DcyKDyp.jpg);
-    background-size: cover;
+#header{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-image: repeating-linear-gradient(to bottom,rgb(175, 255, 131) 0%,rgb(172, 169, 169) 100%);
+    align-items: center;
+    justify-content: center;
 }
 
-input {
+#formMain{
+    width: 75%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+#formEdit{
+    width: 25%;
+    height: 40px;
+    display: none;
+    justify-content: space-between;
+}
+
+#resetList,
+#buttonCreateList,
+#selectMarkUl,
+#selectMarkOl,
+#selectFontSize,
+#selectFontFamily,
+#buttonImg,
+#buttonSave,
+#buttonCreateBoxTable,
+#buttonCreateBoxList,
+#buttonMutate,
+#buttonBold,
+#buttomItalic,
+#buttonUnderline,
+#buttonTextColor,
+#buttonTextBGC,
+#buttonCreateTable,
+#resetTable {
+    cursor: pointer;
+    width: 90px;
+    height: 28px;
+    border: none;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px rgba(0,0,0,.3);
+    text-decoration: none;
+    border-radius: 15px;
+    background: rgb(10,120,10);
+    box-shadow:
+     inset 0 0 3px 1px rgba(0,0,0,.8),
+     inset rgba(0,0,0,.3) -5px -5px 8px 5px,
+     inset rgba(255,255,255,.5) 5px 5px 8px 5px,
+     1px 1px 1px rgba(255,255,255,.1),
+     -2px -2px 5px rgba(0,0,0,.5);
+    transition: .2s;
+    outline: none;
+    font-family: fantasy;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+#selectMarkUl,
+#selectMarkOl,
+#selectFontSize,
+#selectFontFamily,
+#resetList:hover,
+#buttonCreateList:hover,
+#buttonSave:hover,
+#buttonImg:hover,
+#buttonCreateBoxTable:hover,
+#buttonCreateBoxList:hover,
+#buttonMutate:hover,
+#buttonBold:hover,
+#buttomItalic:hover,
+#buttonUnderline:hover,
+#buttonTextColor:hover,
+#buttonTextBGC:hover,
+#buttonCreateTable:hover,
+#resetTable:hover {
+    background: white;
+    color: rgb(10,120,10);
+}
+
+#selectMarkUl:hover,
+#selectMarkOl:hover,
+#selectFontSize:hover,
+#selectFontFamily:hover{
+    background:  rgb(10,120,10);
+    color: white;
+    transform: scale(1.2);
+}
+
+
+#resetList:hover,
+#buttonCreateList:hover,
+#buttonSave:hover,
+#buttonImg:hover,
+#buttonCreateBoxTable:hover,
+#buttonCreateBoxList:hover,
+#buttonMutate:hover,
+#buttonBold:hover,
+#buttomItalic:hover,
+#buttonUnderline:hover,
+#buttonTextColor:hover,
+#buttonTextBGC:hover,
+#buttonCreateTable:hover,
+#resetTable:hover {
+    transform: scale(1.2);
+}
+
+#container2,
+#container1{
+    width: 100%;
+    min-height: 610px;
+    border: 1px black solid;
+    padding: 15px;
+    position: relative;
+}
+#container1 {
+    display: none;
+}
+#container2 {
+    display: none;
+    padding: 0px;
+}
+#textArea{
+    width: 100%;
+    min-height: 610px;
+    font-size: 24px;
+}
+
+#boxes{
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 35%;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 45px;
+    box-shadow:
+    inset 0 0 3px 1px rgba(0,0,0,.8),
+    inset rgba(0,0,0,.3) -5px -5px 8px 5px,
+    inset rgba(255,255,255,.5) 5px 5px 8px 5px,
+    1px 1px 1px rgba(255,255,255,.1),
+    -2px -2px 5px rgba(0,0,0,.5);
+}
+#boxBgColor{
+    display: none;
+}
+#boxColor{
+    display: flex;
+}
+#boxIMG{
+    display: none;
+}
+#boxIMG,
+#boxColor,
+#boxBgColor{
+    height: 210px;
+    width: 209.9px;
+    flex-flow: row wrap;
+}
+.box2,
+.box1,
+.box{
+    height: 70.6px;
+    width: 69.3px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#resetList,
+#buttonCreateList,
+#buttonCreateTable,
+#resetTable,
+#file,
+#buttonImg {
+    margin: 7px;
+}
+
+
+#file{
+    width: 116px;
+}
+
+#containerTable{
+    display: none;
+    flex-flow: row wrap;
+}
+#containerList{
+    display: none;
+    flex-flow: row wrap;
+}
+
+#listNumber,
+#TableNumberRows,
+#TableNumberColumns,
+#TableWidth,
+#TabletHight,
+#TableCellspacing,
+#TableWidthBorder,
+#TableColorBorder{
+    width: 30px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 5px;
+    outline: none;
+    box-shadow:
+    1px 1px 1px rgba(255,255,255,.1),
+    3px 0px 16px rgba(0,0,0,.5);
+}
+label{
+    color: green;
+    font-family: fantasy;
+}
+
+#selectMarkOl{
+    display: none;
+    margin: 6px;
+}
+
+#selectMarkUl{
+    display: none;
+    margin: 6px;
+}
+
+#cursive{
+    font-family: cursive;
+}
+#fantasy{
+    font-family: fantasy;
+}
+#monospase{
+    font-family: monospase;
+}
+#sensSerif{
+    font-family: sens-serif;
+}
+#georgia{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* input {
     width: 40px;
     height: 18px;
     border-radius: 5px;
@@ -173,4 +424,4 @@ span {
 
 #formList {
     display: none;
-}
+} */
