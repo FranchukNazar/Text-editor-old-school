@@ -16,7 +16,7 @@
             <select name="selectFontSize" id="selectFontSize">
                 <option value="12px">12px</option>
                 <option value="14px">14px</option>
-                <option value="16px">16px</option>
+                <option value="16px" selected>16px</option>
                 <option value="18px">18px</option>
                 <option value="20px">20px</option>
                 <option value="22px">22px</option>
@@ -26,9 +26,9 @@
             <select name="selectFontFamily" id="selectFontFamily">
                 <option value="cursive" id="cursive">cursive</option>
                 <option value="fantasy" id="fantasy">fantasy</option>
-                <option value="monospase" id="monospase">monospase</option>
+                <option value="monospase" id="monospase">monosp</option>
                 <option value="Georgia" id="georgia">Georgia</option>
-                <option value="sens-serif" id="sensSerif">sens-serif</option>
+                <option value="sens-serif" id="sensSerif" selected>sens-serif</option>
             </select>
             <input type="button" id="buttonTextColor" value="Color of Text">
             <input type="button" id="buttonTextBGC" value="Background">
@@ -93,6 +93,7 @@
         </div>
         
         <div id="boxIMG">
+            <div class="box2" style="background-size: 100% 100%"></div>
             <div class="box2"></div>
             <div class="box2"></div>
             <div class="box2"></div>
@@ -101,8 +102,7 @@
             <div class="box2"></div>
             <div class="box2"></div>
             <div class="box2"></div>
-            <div class="box2"></div>
-            <input type="file" id="file" name="file" value="choose img" multiple>
+            <input type="file" id="file" name="file" value="choose img" accept=".png, .jpg, .jpeg" multiple>
         </div>
         
         <div id="containerTable">
@@ -120,19 +120,18 @@
         <div id="containerList">
             <label for="Ol">
             OL
-            <input type="radio" class="Ol" name="list" value="ol" checked>
+            <input type="radio" class="Ol" name="list" value="ol" >
             </label>
             <label for="Ul">
             UL
-            <input type="radio" class="Ul" name="list" value="ul" >
+            <input type="radio" class="Ul" name="list" value="ul" checked>
             </label>
             <br>
             <label for="listNumber">Number of list<input type="text" id="listNumber" name="listNumber"></label>
                 <select name="selectMarkOl" id="selectMarkOl">
-                    <option value="decimal">decimal</option>
-                    <option value="upper-alpha">upper-alpha</option>
-                    <option value="upper-roman">upper-roman</option>
-                    <option value="lower-greek">lower-greek</option>
+                    <option value="1">decimal</option>
+                    <option value="A">upper-alpha</option>
+                    <option value="I">upper-roman</option>
                 </select>
                 <select name="selectMarkUl" id="selectMarkUl">
                     <option value="disc">disc</option>
