@@ -25,6 +25,15 @@
     display: none;
     justify-content: space-between;
 }
+#buttonUnderline{
+    text-decoration: underline;
+}
+#buttonBold{
+    font-weight: bold;
+}
+#buttonItalic{
+    font-style: italic;
+}
 
 #resetList,
 #buttonCreateList,
@@ -34,7 +43,7 @@
 #buttonCreateBoxList,
 #buttonMutate,
 #buttonBold,
-#buttomItalic,
+#buttonItalic,
 #buttonUnderline,
 #buttonTextColor,
 #buttonTextBGC,
@@ -101,7 +110,7 @@
 #buttonCreateBoxList:hover,
 #buttonMutate:hover,
 #buttonBold:hover,
-#buttomItalic:hover,
+#buttonItalic:hover,
 #buttonUnderline:hover,
 #buttonTextColor:hover,
 #buttonTextBGC:hover,

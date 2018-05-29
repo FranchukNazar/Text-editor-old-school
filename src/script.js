@@ -28,27 +28,67 @@ for (let i = 0; i < document.getElementsByClassName('box2').length; i++) {
     getClass('box2', i).style.backgroundSize = '100% 100%';
 }
 
+let boldSwitch = 0;
 getId('buttonBold').addEventListener('click', () => {
-    container1.style.fontWeight = 'bold';
-    getId('buttonBold').style.backgroundColor = 'white';
-    getId('buttonBold').style.color = 'green';
-}, true);
-// getId('buttonBold').addEventListener('click', () => {
-//     container1.style.fontWeight = 'normal';
-//     getId('buttonBold').style.backgroundColor = 'green';
-//     getId('buttonBold').style.color = 'white';
-// }, false);
-getId('buttomItalic').addEventListener('click', () => {
-    container1.style.fontStyle = 'italic';
-    getId('buttomItalic').style.backgroundColor = 'white';
-    getId('buttomItalic').style.color = 'green';
-}, true);
+    switch (boldSwitch) {
+        case 0:
+            container1.style.fontWeight = 'bold';
+            getId('buttonBold').style.backgroundColor = 'white';
+            getId('buttonBold').style.color = 'green';
+            boldSwitch = 1;
+            break;
+        case 1:
+            container1.style.fontWeight = 'normal';
+            getId('buttonBold').style.backgroundColor = 'green';
+            getId('buttonBold').style.color = 'white';
+            boldSwitch = 0;
+            break;
+        default:
+            alert('Smth goes wrong');
+    }
+});
 
+let italicSwitch = 0;
+getId('buttonItalic').addEventListener('click', () => {
+    switch (italicSwitch) {
+        case 0:
+            container1.style.fontStyle = 'italic';
+            getId('buttonItalic').style.backgroundColor = 'white';
+            getId('buttonItalic').style.color = 'green';
+            italicSwitch = 1;
+            break;
+        case 1:
+            container1.style.fontStyle = 'normal';
+            getId('buttonItalic').style.backgroundColor = 'green';
+            getId('buttonItalic').style.color = 'white';
+            italicSwitch = 0;
+            break;
+        default:
+            alert('Smth goes wrong');
+    }
+});
+
+let underlineSwitch = 0;
 getId('buttonUnderline').addEventListener('click', () => {
-    container1.style.textDecoration = 'underline';
-    getId('buttonUnderline').style.backgroundColor = 'white';
-    getId('buttonUnderline').style.color = 'green';
-}, true);
+    switch (underlineSwitch) {
+        case 0:
+            container1.style.textDecoration = 'underline';
+            getId('buttonUnderline').style.backgroundColor = 'white';
+            getId('buttonUnderline').style.color = 'green';
+            underlineSwitch = 1;
+            break;
+        case 1:
+            container1.style.textDecoration = 'none';
+            getId('buttonUnderline').style.backgroundColor = 'green';
+            getId('buttonUnderline').style.color = 'white';
+            underlineSwitch = 0;
+            break;
+        default:
+            alert('Smth goes wrong');
+    }
+});
+
+
 
 
 
@@ -122,9 +162,7 @@ for (let i = 0; i < document.getElementsByClassName('box2').length; i++) {
 }
 
 
-getId('file').addEventListener('change', () => {
-    container1.style.background = 'url(' + getId('file').selected  + ')';
-});
+
 
 getId('buttonMutate').addEventListener('click',()=>{
     container1.style.display = 'none';
@@ -250,6 +288,25 @@ getId('resetList').addEventListener('click',()=>{
     getId('selectMarkUl').value = 'disc' ;
     getId('selectMarkOl').value = 'decimal';
 });
+
+
+
+
+
+
+var files;
+var reader = new FileReader();
+
+
+getId('file').onchange = function () {
+    files = getId('file').files;
+    reader.readAsDataURL(files[0]);
+};
+
+    reader.onload = function (e) {
+        container1.style.background = 'url(' + reader.result + ')';
+    };
+
 
 
 
