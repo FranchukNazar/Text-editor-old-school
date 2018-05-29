@@ -67,82 +67,88 @@
             <textarea name="textArea" id="textArea"></textarea>
         </form>
     </div>
-    <div id="boxes">
-        <div id="boxColor">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+    <div id="containerBoxes">
+        <div id="boxes">
+            <div id="boxColor">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div id="boxBgColor">
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <div class="box1"></div>
+                <input type="button" id="buttonImg" value="bgc image">
+            </div>
+            
+            <div id="boxIMG">
+                <div class="box2" style="background-size: 100% 100%"></div>
+                <div class="box2"></div>
+                <div class="box2"></div>
+                <div class="box2"></div>
+                <div class="box2"></div>
+                <div class="box2"></div>
+                <div class="box2"></div>
+                <div class="box2"></div>
+                <div class="box2"></div>
+                <input type="file" id="file" name="file" value="choose img" accept=".png, .jpg, .jpeg" multiple>
+            </div>
+            
+            <div id="containerTable">
+                    <label for="TableNumberRows">Number of rows<input type="text" id="TableNumberRows" name="TableNumberRows"></label>
+                    <label for="TableNumberColumns">Number of columns<input type="text" id="TableNumberColumns" name="TableNumberColumns"></label>
+                    <label for="TableWidth">Width of column<input type="text" id="TableWidth" name="TableWidth"></label>
+                    <label for="TabletHight">Height of row<input type="text" id="TabletHight" name="TabletHight"></label>
+                    <label for="TableCellspacing">cellspacing<input type="text" id="TableCellspacing" name="TableCellspacing"></label>
+                    <label for="TableWidthBorder">width of border<input type="text" id="TableWidthBorder" name="TableWidthBorder"></label>
+                    <label for="TableColorBorder">color of border<input type="text" id="TableColorBorder" name="TableColorBorder"></label>
+                <input type="button" id="buttonCreateTable" value="Create Table">
+                <input type="button" id="resetTable" value="Reset">
+            </div>
+            
+            <div id="containerList">
+                <label for="Ol">
+                OL
+                <input type="radio" class="Ol" name="list" value="ol" >
+                </label>
+                <label for="Ul">
+                UL
+                <input type="radio" class="Ul" name="list" value="ul" checked>
+                </label>
+                <br>
+                <label for="listNumber">Number of list<input type="text" id="listNumber" name="listNumber"></label>
+                    <select name="selectMarkOl" id="selectMarkOl">
+                        <option value="1">decimal</option>
+                        <option value="A">upper-alpha</option>
+                        <option value="I">upper-roman</option>
+                    </select>
+                    <select name="selectMarkUl" id="selectMarkUl">
+                        <option value="disc">disc</option>
+                        <option value="circle">circle</option>
+                        <option value="square">square</option>
+                    </select>
+                    <input type="button" id="buttonCreateList" value="Create List">
+                    <input type="button" id="resetList" value="Reset">
+                </div>
+                <div id="userEnter">
+                    <label for="userName">User Name<input type="text" id="userName" name="userName"></label>
+                    <label for="userPassword">Password<input type="password" id="userPassword" name="userPassword"></label>
+                    <input type="button" id="enter" value="ENTER">
+                </div> 
         </div>
-        <div id="boxBgColor">
-            <div class="box1"></div>
-            <div class="box1"></div>
-            <div class="box1"></div>
-            <div class="box1"></div>
-            <div class="box1"></div>
-            <div class="box1"></div>
-            <div class="box1"></div>
-            <div class="box1"></div>
-            <div class="box1"></div>
-            <input type="button" id="buttonImg" value="bgc image">
-        </div>
-        
-        <div id="boxIMG">
-            <div class="box2" style="background-size: 100% 100%"></div>
-            <div class="box2"></div>
-            <div class="box2"></div>
-            <div class="box2"></div>
-            <div class="box2"></div>
-            <div class="box2"></div>
-            <div class="box2"></div>
-            <div class="box2"></div>
-            <div class="box2"></div>
-            <input type="file" id="file" name="file" value="choose img" accept=".png, .jpg, .jpeg" multiple>
-        </div>
-        
-        <div id="containerTable">
-                <label for="TableNumberRows">Number of rows<input type="text" id="TableNumberRows" name="TableNumberRows"></label>
-                <label for="TableNumberColumns">Number of columns<input type="text" id="TableNumberColumns" name="TableNumberColumns"></label>
-                <label for="TableWidth">Width of column<input type="text" id="TableWidth" name="TableWidth"></label>
-                <label for="TabletHight">Height of row<input type="text" id="TabletHight" name="TabletHight"></label>
-                <label for="TableCellspacing">cellspacing<input type="text" id="TableCellspacing" name="TableCellspacing"></label>
-                <label for="TableWidthBorder">width of border<input type="text" id="TableWidthBorder" name="TableWidthBorder"></label>
-                <label for="TableColorBorder">color of border<input type="text" id="TableColorBorder" name="TableColorBorder"></label>
-            <input type="button" id="buttonCreateTable" value="Create Table">
-            <input type="button" id="resetTable" value="Reset">
-        </div>
-        
-        <div id="containerList">
-            <label for="Ol">
-            OL
-            <input type="radio" class="Ol" name="list" value="ol" >
-            </label>
-            <label for="Ul">
-            UL
-            <input type="radio" class="Ul" name="list" value="ul" checked>
-            </label>
-            <br>
-            <label for="listNumber">Number of list<input type="text" id="listNumber" name="listNumber"></label>
-                <select name="selectMarkOl" id="selectMarkOl">
-                    <option value="1">decimal</option>
-                    <option value="A">upper-alpha</option>
-                    <option value="I">upper-roman</option>
-                </select>
-                <select name="selectMarkUl" id="selectMarkUl">
-                    <option value="disc">disc</option>
-                    <option value="circle">circle</option>
-                    <option value="square">square</option>
-                </select>
-                <input type="button" id="buttonCreateList" value="Create List">
-                <input type="button" id="resetList" value="Reset">
-            </div> 
     </div>
-
     <script src="script.js"></script>
 </body>
     

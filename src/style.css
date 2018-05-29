@@ -34,7 +34,7 @@
 #buttonItalic{
     font-style: italic;
 }
-
+#enter,
 #resetList,
 #buttonCreateList,
 #buttonImg,
@@ -97,7 +97,7 @@
     letter-spacing: 1px;
     color: rgb(10,120,10);
 }
-
+#enter:hover,
 #selectMarkUl:hover,
 #selectMarkOl:hover,
 #selectFontSize:hover,
@@ -142,9 +142,9 @@
 }
 
 #boxes{
-    display: none;
+    display: block;
     position: absolute;
-    z-index: 1;
+    z-index: 999;
     top: 20%;
     left: 35%;
     width: 300px;
@@ -158,6 +158,34 @@
     inset rgba(255,255,255,.5) 5px 5px 8px 5px,
     1px 1px 1px rgba(255,255,255,.1),
     -2px -2px 5px rgba(0,0,0,.5);
+}
+
+#containerBoxes{
+    display: block;
+    position: absolute;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: #00000061;
+}
+#userEnter{
+    display: block;
+    margin: 10px;
+}
+
+#userEnter > label{
+    margin-left: 50px ;
+}
+#userName,
+#userPassword{
+    margin: 10px;
+}
+#enter{
+    margin: 20px 40px;
 }
 #boxBgColor{
     display: none;
@@ -252,4 +280,17 @@ label{
 }
 #georgia{
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.btnGreen{
+    background-color: white!important;
+    color: green!important;
+}
+.italic{
+    font-style: italic
+}
+.bold{
+    font-weight: bold;
+}
+.underline{
+    text-decoration: underline;
 }

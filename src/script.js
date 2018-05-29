@@ -28,67 +28,32 @@ for (let i = 0; i < document.getElementsByClassName('box2').length; i++) {
     getClass('box2', i).style.backgroundSize = '100% 100%';
 }
 
-let boldSwitch = 0;
+// if user write correct name: Nazar, password: 1111
+getId('enter').addEventListener('click', () => {
+    let name = getId('userName').value;
+    let password = getId('userPassword').value;
+    if(name === 'Nazar'&& password === '1111'){
+        getId('containerBoxes').style.display = 'none';
+        getId('userEnter').style.display = 'none';
+
+    } else {
+        alert('PUT CORRECT NAME and PASSWORD');
+    }
+})
+
+// switch text to bold and back
 getId('buttonBold').addEventListener('click', () => {
-    switch (boldSwitch) {
-        case 0:
-            container1.style.fontWeight = 'bold';
-            getId('buttonBold').style.backgroundColor = 'white';
-            getId('buttonBold').style.color = 'green';
-            boldSwitch = 1;
-            break;
-        case 1:
-            container1.style.fontWeight = 'normal';
-            getId('buttonBold').style.backgroundColor = 'green';
-            getId('buttonBold').style.color = 'white';
-            boldSwitch = 0;
-            break;
-        default:
-            alert('Smth goes wrong');
-    }
-});
-
-let italicSwitch = 0;
+    getId('buttonBold').classList.toggle('btnGreen');
+    container1.classList.toggle('bold');
+})
 getId('buttonItalic').addEventListener('click', () => {
-    switch (italicSwitch) {
-        case 0:
-            container1.style.fontStyle = 'italic';
-            getId('buttonItalic').style.backgroundColor = 'white';
-            getId('buttonItalic').style.color = 'green';
-            italicSwitch = 1;
-            break;
-        case 1:
-            container1.style.fontStyle = 'normal';
-            getId('buttonItalic').style.backgroundColor = 'green';
-            getId('buttonItalic').style.color = 'white';
-            italicSwitch = 0;
-            break;
-        default:
-            alert('Smth goes wrong');
-    }
-});
-
-let underlineSwitch = 0;
+    getId('buttonItalic').classList.toggle('btnGreen');
+    container1.classList.toggle('italic');
+})
 getId('buttonUnderline').addEventListener('click', () => {
-    switch (underlineSwitch) {
-        case 0:
-            container1.style.textDecoration = 'underline';
-            getId('buttonUnderline').style.backgroundColor = 'white';
-            getId('buttonUnderline').style.color = 'green';
-            underlineSwitch = 1;
-            break;
-        case 1:
-            container1.style.textDecoration = 'none';
-            getId('buttonUnderline').style.backgroundColor = 'green';
-            getId('buttonUnderline').style.color = 'white';
-            underlineSwitch = 0;
-            break;
-        default:
-            alert('Smth goes wrong');
-    }
-});
-
-
+    getId('buttonUnderline').classList.toggle('btnGreen');
+    container1.classList.toggle('underline');
+})
 
 
 
@@ -116,9 +81,13 @@ for (let i = 0; i < document.getElementsByClassName('radioTextAlign').length; i+
 
 getId('buttonTextColor').addEventListener('click', () => {
     getId('boxes').style.display = 'block';
+    getId('containerBoxes').style.display = 'block';
+    getId('userEnter').style.display = 'none';
     getId('boxColor').style.display = 'flex';
-    getId('buttonTextColor').style.backgroundColor = 'white';
-    getId('buttonTextColor').style.color = 'green';
+    getId('boxBgColor').style.display = 'none';
+    getId('containerTable').style.display = 'none';
+    getId('containerList').style.display = 'none';
+    getId('boxIMG').style.display = 'none';
 });
 
 for (let i = 0; i < document.getElementsByClassName('box').length; i++) {
@@ -128,14 +97,19 @@ for (let i = 0; i < document.getElementsByClassName('box').length; i++) {
         getId('boxColor').style.display = 'none';
         getId('buttonTextColor').style.backgroundColor = 'green';
         getId('buttonTextColor').style.color = 'white';
+        getId('containerBoxes').style.display = 'none';
     });
 }
 
 getId('buttonTextBGC').addEventListener('click', () => {
+    getId('userEnter').style.display = 'none';
+    getId('containerBoxes').style.display = 'block';
     getId('boxes').style.display = 'block';
     getId('boxBgColor').style.display = 'flex';
-    getId('buttonTextBGC').style.backgroundColor = 'white';
-    getId('buttonTextBGC').style.color = 'green';
+    getId('boxColor').style.display = 'none';
+    getId('containerTable').style.display = 'none';
+    getId('containerList').style.display = 'none';
+    getId('boxIMG').style.display = 'none';
 }, );
 
 for (let i = 0; i < document.getElementsByClassName('box1').length; i++) {
@@ -145,19 +119,24 @@ for (let i = 0; i < document.getElementsByClassName('box1').length; i++) {
         getId('boxBgColor').style.display = 'none';
         getId('buttonTextBGC').style.backgroundColor = 'green';
         getId('buttonTextBGC').style.color = 'white';
+        getId('containerBoxes').style.display = 'none';
     });
 }
 
 getId('buttonImg').addEventListener('click', () => {
+    getId('userEnter').style.display = 'none';
+    getId('containerBoxes').style.display = 'block';
     getId('boxBgColor').style.display = 'none';
     getId('boxIMG').style.display = 'flex';
-    getId('buttonImg').style.backgroundColor = 'white';
-    getId('buttonImg').style.color = 'green';
+    getId('buttonImg').classList.toggle('btnGreen');
+    getId('containerTable').style.display = 'none';
+    getId('containerList').style.display = 'none';
 });
 
 for (let i = 0; i < document.getElementsByClassName('box2').length; i++) {
     document.getElementsByClassName('box2')[i].addEventListener('click', () => {
         container1.style.background = document.getElementsByClassName('box2')[i].style.background;
+        getId('containerBoxes').style.display = 'none';
     });
 }
 
@@ -169,7 +148,7 @@ getId('buttonMutate').addEventListener('click',()=>{
     container2.style.display = 'block';
     getId('formMain').style.display = 'none';
     getId('formEdit').style.display = 'flex';
-    getId('textArea').value = container1.innerHTML;
+    getId('textArea').value = container1.innerHTML;  
 });
 getId('buttonSave').addEventListener('click',()=>{
     container1.innerHTML = '';
@@ -182,8 +161,14 @@ getId('buttonSave').addEventListener('click',()=>{
 });
 
 getId('buttonCreateBoxTable').addEventListener('click',()=>{
+    getId('containerBoxes').style.display = 'block';
+    getId('userEnter').style.display = 'none';
     getId('boxes').style.display = 'block';
     getId('containerTable').style.display = 'flex';
+    getId('containerList').style.display = 'none';
+    getId('boxBgColor').style.display = 'none';
+    getId('boxColor').style.display = 'none';
+    getId('boxIMG').style.display = 'none';
 });
 let tableNumberRows;
 let tableNumberColumns;
@@ -216,6 +201,7 @@ getId('buttonCreateTable').addEventListener('click',()=>{
         getId('textArea').value += "</tr>";
     }
     getId('textArea').value += '</table>';
+    getId('containerBoxes').style.display = 'none';
 });
 
 getId('resetTable').addEventListener('click',()=>{
@@ -230,10 +216,16 @@ getId('resetTable').addEventListener('click',()=>{
 
 
 getId('buttonCreateBoxList').addEventListener('click',()=>{
+    getId('containerBoxes').style.display = 'block';
+    getId('userEnter').style.display = 'none';
     getId('boxes').style.display = 'block';
+    getId('containerTable').style.display = 'none';
     getId('containerList').style.display = 'block';
     getId('selectMarkUl').style.display = 'block';
     getId('selectMarkOl').style.display = 'none';
+    getId('boxBgColor').style.display = 'none';
+    getId('boxColor').style.display = 'none';
+    getId('boxIMG').style.display = 'none';
 });
 
 
@@ -281,6 +273,7 @@ getId('buttonCreateList').addEventListener('click',()=>{
         }
         getId('textArea').value += '</ol>'; 
     }
+    getId('containerBoxes').style.display = 'none';
 });
 
 getId('resetList').addEventListener('click',()=>{
@@ -292,20 +285,31 @@ getId('resetList').addEventListener('click',()=>{
 
 
 
-
+// Upload img from computer to page
 
 var files;
 var reader = new FileReader();
-
 
 getId('file').onchange = function () {
     files = getId('file').files;
     reader.readAsDataURL(files[0]);
 };
 
-    reader.onload = function (e) {
-        container1.style.background = 'url(' + reader.result + ')';
-    };
+reader.onload = function (e) {
+    container1.style.background = 'url(' + reader.result + ')';
+    getId('containerBoxes').style.display = 'none';
+};
+
+
+
+
+getId('containerBoxes').addEventListener('click', (e) => {
+    console.log(e.target);
+    if (e.target.id == 'containerBoxes' && e.target.id != 'boxes' && getId('userEnter').style.display !== 'block') {
+        getId('boxes').style.display = 'none';
+        getId('containerBoxes').style.display = 'none';
+    }
+})
 
 
 
@@ -349,156 +353,4 @@ getId('file').onchange = function () {
 
 
 
-// let screenText = getId('screen');
-// let radioFS = document.getElementsByName('radioFS');
-// let fontFamily = getId('fontFamily');
-// let buttonTextColor = getId('buttonTextColor');
-// let buttonTextBGC = getId('buttonTextBGC');
-// let radioTL = document.getElementsByName('radioTL');
-// let textNumberLines;
-// let textNumberColumns;
-// let textWidthColumns;
-// let textHightLines;
-// let textWidthBorder;
-// let borderType = getId('borderType');
-// let borderColor = getId('borderColor');
-// let borCol = 'black';
-// var borderStyle = 'solid';
-// let textNumList;
-// let markType = getId('markType');
-// let mark = 'circle';
-// let switchColorScreen = 0;
-// let onWindow = 0;
-// getId('buttonMutate').onclick = function () {
-//     getId('textArea').value = getId('screen').innerHTML;
-//     getId('formArea').style.display = 'block';
-//     getId('formStyle').style.display = 'none';
-// }
-// getId('buttonStyle').onclick = function () {
-//     getId('formArea').style.display = 'none';
-//     getId('formStyle').style.display = 'block';
-// }
-// getId('buttonSave').onclick = function () {
-//     getId('screen').innerHTML = '';
-//     getId('screen').innerHTML += getId('textArea').value;
-//     getId('textArea').value = '';
-//     getId('formArea').style.display = 'none';
-// }
-// for (let i = 0; i < radioFS.length; i++) {
-//     radioFS[i].onclick = function () {
-//         screenText.style.fontSize = radioFS[i].value;
-//     }
-// }
-// fontFamily.onchange = function () {
-//     for (let i = 0; i < fontFamily.options.length; i++) {
-//         if (fontFamily.options[i].selected) {
-//             screenText.style.fontFamily = fontFamily.options[i].value;
-//         }
-//     }
-// }
-// buttonTextColor.onclick = function () {
-//     getId('boxColor').style.display = 'flex';
-// }
-// buttonTextBGC.onclick = function () {
-//     getId('boxBgColor').style.display = 'flex';
-// }
 
-// for (let i = 0; i < document.getElementsByClassName('box').length; i++) {
-//     document.getElementsByClassName('box')[i].onclick = function () {
-//         screenText.style.color = document.getElementsByClassName('box')[i].style.backgroundColor;
-//         getId('boxColor').style.display = 'none';
-//     }
-// }
-// for (let i = 0; i < document.getElementsByClassName('box1').length; i++) {
-//     document.getElementsByClassName('box1')[i].onclick = function () {
-//         getId('container1').style.backgroundColor = document.getElementsByClassName('box1')[i].style.backgroundColor;
-//         getId('boxBgColor').style.display = 'none';
-//     }
-// }
-
-// getId('checkboxCursive').onclick = function () {
-//     if (getId('checkboxCursive').checked) {
-//         screenText.style.fontStyle = 'italic';
-//     }
-//     else {
-//         screenText.style.fontStyle = 'normal';
-//     }
-// }
-// getId('checkboxBold').onclick = function () {
-//     if (getId('checkboxBold').checked == true) {
-//         screenText.style.fontWeight = 'bold';
-//     }
-//     else {
-//         screenText.style.fontWeight = 'normal';
-//     }
-// }
-// getId('buttonAdd').onclick = function () {
-//     getId('container1').style.display = 'none';
-//     getId('container2').style.display = 'none';
-//     getId('formStyleMutate').style.display = 'none';
-//     getId('container3').style.display = 'block';
-// }
-// console.log(radioTL[0]);
-// radioTL[0].onclick = function () {
-//     getId('formTable').style.display = 'block';
-//     getId('formList').style.display = 'none';
-// }
-// radioTL[1].onclick = function () {
-//     getId('formTable').style.display = 'none';
-//     getId('formList').style.display = 'block';
-// }
-
-// getId('buttonCreateTable').onclick = function () {
-//     getId('textArea').value = getId('screen').innerHTML;
-//     borderStyle = borderType.value || 'solid';
-//     borCol = borderColor.value || 'black';
-//     textNumberLines = +document.getElementsByName('textNumberLines')[0].value;
-//     textNumberColumns = +document.getElementsByName('textNumberColumns')[0].value;
-//     textWidthColumns = +document.getElementsByName('textWidthColumns')[0].value;
-//     textHightLines = +document.getElementsByName('textHightLines')[0].value;
-//     textWidthBorder = +document.getElementsByName('textWidthBorder')[0].value;
-//     getId('textArea').value += '<table>';
-//     for (let i = 0; i < textNumberLines; i++) {
-//         getId('textArea').value += '<tr>';
-//         for (let j = 0; j < textNumberColumns; j++) {
-//             getId('textArea').value += '<td style="height:' + textHightLines + 'px;' + ' width:' + textWidthColumns + 'px; ' + 'border: ' + textWidthBorder + 'px ' + borderStyle + ' ' + borCol + '">' + "</td>";
-//         }
-//         getId('textArea').value += "</tr>";
-//     }
-//     getId('textArea').value += '</table>';
-//     getId('container1').style.display = 'block';
-//     getId('container2').style.display = 'block';
-//     getId('formStyleMutate').style.display = 'flex';
-//     getId('container3').style.display = 'none';
-// }
-// getId('buttonCreateList').onclick = function () {
-//     getId('textArea').value = getId('screen').innerHTML;
-//     mark = markType.value || 'circle';
-//     textNumberList = +document.getElementsByName('textNumberList')[0].value;
-//     getId('textArea').value += '<ul type="' + mark + '">';
-//     for (let i = 0; i < textNumberList; i++) {
-//         getId('textArea').value += '<li>';
-//         getId('textArea').value += '<p>Text<p/>';
-//         getId('textArea').value += "</li>";
-//     }
-//     getId('textArea').value += '</ul>';
-//     getId('container1').style.display = 'block';
-//     getId('container2').style.display = 'block';
-//     getId('formStyleMutate').style.display = 'flex';
-//     getId('container3').style.display = 'none';
-// }
-
-// document.body.onclick = function (e) {
-//     e = e || window.event;
-//     target = e.target || e.srcElement;
-//     if (target.id == "buttonTextColor") {
-//         getId('boxColor').style.display = 'flex';
-//     } else {
-//         getId('boxColor').style.display = 'none';
-//     }
-//     if (target.id == "buttonTextBGC") {
-//         getId('boxBgColor').style.display = 'flex';
-//     } else {
-//         getId('boxBgColor').style.display = 'none';
-//     }
-// }
