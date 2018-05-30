@@ -10,6 +10,8 @@ let getId = function (a) {
 let container1 = getId('container1');
 let container2 = getId('container2');
 
+
+
 // made backgrounds to boxes
 
 let colors = ['red', 'blue', 'green', 'black', 'white', 'gray', 'yellow', 'blueviolet', 'aquamarine'];
@@ -28,6 +30,10 @@ for (let i = 0; i < document.getElementsByClassName('box2').length; i++) {
     getClass('box2', i).style.backgroundSize = '100% 100%';
 }
 
+
+// to understand if we login
+let loginer = false;
+
 // if user write correct name: Nazar, password: 1111
 getId('enter').addEventListener('click', () => {
     let name = getId('userName').value;
@@ -38,13 +44,41 @@ getId('enter').addEventListener('click', () => {
         getId('userEnter').style.display = 'none';
         getId('userName').value = '';
         getId('userPassword').value= '';
-
+        loginer = true;
     } else {
         getId('containerBoxes').style.backgroundColor = '#ff0000c7';
         alert('PUT CORRECT NAME and PASSWORD');
         
     }
 })
+
+
+
+
+getId('buttonBlock').addEventListener('click', () => {
+    getId('boxes').style.display = 'block';
+    getId('containerBoxes').style.display = 'block';
+    getId('userEnter').style.display = 'block';
+    getId('containerTable').style.display = 'none';
+    getId('containerList').style.display = 'none';
+    getId('boxBgColor').style.display = 'none';
+    getId('boxColor').style.display = 'none';
+    getId('boxIMG').style.display = 'none';
+    getId('userName').value = '';
+    getId('userPassword').value= '';
+    loginer = false;
+});
+
+
+getId('containerBoxes').addEventListener('click', (e) => {
+    console.log(e.target);
+    if (e.target.id == 'containerBoxes' && e.target.id != 'boxes' && loginer) {
+        getId('boxes').style.display = 'none';
+        getId('containerBoxes').style.display = 'none';
+    }
+})
+
+
 
 // switch text to bold and back
 getId('buttonBold').addEventListener('click', () => {
@@ -305,28 +339,8 @@ reader.onload = function (e) {
     getId('containerBoxes').style.display = 'none';
 };
 
-getId('buttonBlock').addEventListener('click', () => {
-    getId('boxes').style.display = 'block';
-    getId('containerBoxes').style.display = 'block';
-    getId('userEnter').style.display = 'block';
-    getId('containerTable').style.display = 'none';
-    getId('containerList').style.display = 'none';
-    getId('boxBgColor').style.display = 'none';
-    getId('boxColor').style.display = 'none';
-    getId('boxIMG').style.display = 'none';
-    getId('userName').value = '';
-    getId('userPassword').value= '';
-
-});
 
 
-getId('containerBoxes').addEventListener('click', (e) => {
-    console.log(e.target);
-    if (e.target.id == 'containerBoxes' && e.target.id != 'boxes' ) {
-        getId('boxes').style.display = 'none';
-        getId('containerBoxes').style.display = 'none';
-    }
-})
 // && getId('userEnter').style.display === 'block' &&  getId('boxColor').style.display == 'none'
 
 
