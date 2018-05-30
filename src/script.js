@@ -33,11 +33,16 @@ getId('enter').addEventListener('click', () => {
     let name = getId('userName').value;
     let password = getId('userPassword').value;
     if(name === 'Nazar'&& password === '1111'){
+        getId('containerBoxes').style.backgroundColor = '#00000061';
         getId('containerBoxes').style.display = 'none';
         getId('userEnter').style.display = 'none';
+        getId('userName').value = '';
+        getId('userPassword').value= '';
 
     } else {
+        getId('containerBoxes').style.backgroundColor = '#ff0000c7';
         alert('PUT CORRECT NAME and PASSWORD');
+        
     }
 })
 
@@ -300,17 +305,29 @@ reader.onload = function (e) {
     getId('containerBoxes').style.display = 'none';
 };
 
+getId('buttonBlock').addEventListener('click', () => {
+    getId('boxes').style.display = 'block';
+    getId('containerBoxes').style.display = 'block';
+    getId('userEnter').style.display = 'block';
+    getId('containerTable').style.display = 'none';
+    getId('containerList').style.display = 'none';
+    getId('boxBgColor').style.display = 'none';
+    getId('boxColor').style.display = 'none';
+    getId('boxIMG').style.display = 'none';
+    getId('userName').value = '';
+    getId('userPassword').value= '';
 
+});
 
 
 getId('containerBoxes').addEventListener('click', (e) => {
     console.log(e.target);
-    if (e.target.id == 'containerBoxes' && e.target.id != 'boxes' && getId('userEnter').style.display !== 'block') {
+    if (e.target.id == 'containerBoxes' && e.target.id != 'boxes' ) {
         getId('boxes').style.display = 'none';
         getId('containerBoxes').style.display = 'none';
     }
 })
-
+// && getId('userEnter').style.display === 'block' &&  getId('boxColor').style.display == 'none'
 
 
 
