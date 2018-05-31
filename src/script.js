@@ -153,6 +153,7 @@ getId('buttonTextBGC').addEventListener('click', () => {
 
 for (let i = 0; i < document.getElementsByClassName('box1').length; i++) {
     document.getElementsByClassName('box1')[i].addEventListener('click', () => {
+        container1.style.background = 'url()';
         container1.style.backgroundColor = document.getElementsByClassName('box1')[i].style.backgroundColor;
         getId('boxes').style.display = 'none';
         getId('boxBgColor').style.display = 'none';
